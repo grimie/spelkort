@@ -101,9 +101,7 @@ for i in hand_siffror:
 
         '''
 
-
-
-#ändring
+#ändring hejhopp
 
 
 "for par in hand"
