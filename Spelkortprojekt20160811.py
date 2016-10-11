@@ -64,7 +64,10 @@ for x in hand_siffror[:-1]:
     n=n+1
 
 
+
+
 #triss i hand
+#vi har problemet att en triss genererar ocksa 2 par då den parar bår position 1,2 och 2,3... vi måste ändra denna kod
 n = 0
 for x in hand_siffror[:-2]:
     if x==hand_siffror[(n+1)]==hand_siffror[n+2]:
