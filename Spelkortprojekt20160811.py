@@ -52,18 +52,22 @@ def par():
     elif hand_siffror[3] == hand_siffror[4]:
         return True
     else:
-        return False'''
+        return False
 print "par", par()
+'''
 
+#par i hand
 n = 0
 for x in hand_siffror[:-1]:
-    if x==xs[(n+1)]:
+    if x==hand_siffror[(n+1)]:
         print "pair in", x
     n=n+1
 
+
+#triss i hand
 n = 0
 for x in hand_siffror[:-2]:
-    if x==xs[(n+1)] and x==xs[n+2:]
+    if x==hand_siffror[(n+1)]==hand_siffror[n+2]:
         print "triss in", x
     n=n+1
 
@@ -75,7 +79,7 @@ for x in hand_siffror[:-2]:
 
 
 
-
+'''
 
 
 def triss():
@@ -96,14 +100,13 @@ def fyrtal():
             return True
 
 print fyrtal()
-'''
+
 for i in hand_siffror:
     if hand_siffror[i] > 1:
         print "you have pair"
 
-        '''
 
-#ändring hejhopp
+#andring hejhopp
 
 
 "for par in hand"
@@ -117,3 +120,4 @@ for x in xs[:-2]:
 
 
 SYNS DET HAR?!?!?
+'''
