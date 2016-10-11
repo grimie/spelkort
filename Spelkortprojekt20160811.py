@@ -34,6 +34,8 @@ for a in hand:
 #[1, 2, 3, 4]
 
 print hand_siffror
+
+'''
 def par():
     hand_siffror.sort()
     langd = len(hand_siffror)
@@ -41,7 +43,7 @@ def par():
         if hand_siffror[n] == hand_siffror[n+1]:
             return True
     return False
-    '''if hand_siffror[0] == hand_siffror[1]:
+    if hand_siffror[0] == hand_siffror[1]:
         return True
     elif hand_siffror[1] == hand_siffror[2]:
         return True
@@ -113,6 +115,5 @@ for x in xs[:-2]:
         print "triple in ", x
     n=n+1
 
-    
-SYNS DET HAR?!?!?
 
+SYNS DET HAR?!?!?
