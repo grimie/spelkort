@@ -115,3 +115,4 @@ for x in xs[:-2]:
         print "triple in ", x
     n=n+1
     
+SYNS DET HAR?!?!?
