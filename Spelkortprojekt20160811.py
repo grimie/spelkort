@@ -101,9 +101,7 @@ for i in hand_siffror:
 
         '''
 
-
-
-
+#ändring hejhopp
 
 
 "for par in hand"
@@ -114,5 +112,7 @@ for x in xs[:-2]:
     if x==xs[(n+1)] and x==xs[n+2]:
         print "triple in ", x
     n=n+1
+
     
 SYNS DET HAR?!?!?
+
