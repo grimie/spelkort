@@ -76,7 +76,27 @@ for x in hand_siffror[:-2]:
 
 
 
+def farg():
+    if hand_farg[0] == hand_farg[1] and hand_farg[1] == hand_farg[2] and hand_farg[2] == hand_farg[3] and hand_farg[3] == hand_farg[4]:
+        return True
+    else:
+        return False
 
+
+def stege():
+    hand_siffror.sort()
+    if hand_siffror[n] == hand_siffror[n+1] +1 and hand_siffror[n+1] == hand_siffror[n+2] +1 and hand_siffror[n+2] == hand_siffror[n+3] +1 and hand_siffror[n+3] == hand_siffror[n+4] +1:
+        return True
+    else:
+        return False
+
+#farg ochs stege är inte så svårt att få till, men frågan är om man ska göra det mer generellt? Men att hitta par i en hand med 10 kort kanske kan vara relevant, samma sak du letar efter.
+# men om vi letar färg i en hand med 10 kort, letar vi då efter 5 av samma färg eller hela handen(10 kort) i samma färg. Generellt i all ära, men om vi inte ens har definerat vad vi vill
+# ha blir det ju lite märkligt att skriva en generell funktion på det. Eftersom du inte finns ett vanligt spel med 10 kort på hand där något heter färg. Min tanke!
+            
+    
+    
+    
 
 
 
