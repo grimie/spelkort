@@ -12,7 +12,6 @@ for farg in farger:
 
 import random
 random.shuffle(kortlek)
-print kortlek
 
 "nu ska vi plocka ur en hand"
 
@@ -24,39 +23,21 @@ print hand
 hand_farg = []
 for a in hand:
     hand_farg.append(a[0])
-hand_farg = ["hjarter", "hjarter", "hjarter", "hjarter", "hjarter"]
-print hand_farg
 
 
 hand_siffror = []
 for a in hand:
     hand_siffror.append(a[1])
-hand_siffror = [1, 1, 2, 3, 4]
-#[1, 2, 3, 4]
-
-print hand_siffror
 
 
 
-#par i hand
-'''n = 0
-for x in hand_siffror[:-1]:
-    if x==hand_siffror[(n+1)]:
-        print "pair in", x
-    n=n+1'''
-
-#par pa annat satt
+#definition av parformer
 par_i_hand=[]
-def samlingar():
-    for x in range(12):
-        if hand_siffror.count(x+1) == 2:
-            par_i_hand.append(x+1)
-'''
-            print "Par i", (x+1)
-    print par_i_hand
-print samlingar()
-'''
-#singelpar
+for x in range(12):
+    if hand_siffror.count(x+1) == 2:
+        par_i_hand.append(x+1)
+
+##singelpar
 
 def par():
     if len(par_i_hand) == 1:
@@ -64,7 +45,7 @@ def par():
     else:
         return False
 
-#dubbelpar
+##dubbelpar
 
 def tvapar():
     if len(par_i_hand) == 2:
@@ -75,28 +56,27 @@ def tvapar():
 
 #triss
 triss_i_hand=[]
-for x in range(12):
-    if hand_siffror.count(x+1) == 3:
-        triss_i_hand.append(x+1)
-
 def triss():
-    if len(triss_i_hand) == 3:
-        return True
-    else:
-        return False
+    for x in range(12):
+        if hand_siffror.count(x+1) == 3:
+            triss_i_hand.append(x+1)
+            return True
+
+    return False
+
+
 
 
 #fyrtal
 fyrtal_i_hand=[]
-for x in range(12):
-    if hand_siffror.count(x+1) == 4:
-        fyrtal_i_hand.append(x+1)
-
 def fyrtal():
-    if len(fyrtal_i_hand) == 4:
-        return True
-    else:
-        return False
+    for x in range(12):
+        if hand_siffror.count(x+1) == 4:
+            fyrtal_i_hand.append(x+1)
+            return True
+
+    return False
+
 
 #full-house
 def full_house():
@@ -122,3 +102,29 @@ def stege():
         return True
     else:
         return False
+
+
+
+def Main():
+    if stege() == True and farg() == True:
+        print "Du har fargstege i", hand_siffror[0:], "i fargen", hand_farg[0]
+
+    elif fyrtal() == True:
+        print "Du har fyrtal i", fyrtal_i_hand[0]
+
+    elif par() == True and triss() == True:
+        print "du har full-house med triss i", triss_i_hand, "och par i", par_i_hand
+    elif farg() == True:
+        print "du har farg i", hand_farg[1]
+    elif stege() == True:
+        print "Du har stege i", hand_siffror[0:]
+    elif triss() == True:
+        print "du har triss i", triss_i_hand
+    elif tvapar() == True:
+        print "du har tva par i", par_i_hand
+    elif par() == True:
+        print "du har par i", par_i_hand
+    else:
+        print "du har tyvarr inget bra pa handen"
+
+print Main()
