@@ -24,13 +24,14 @@ print hand
 hand_farg = []
 for a in hand:
     hand_farg.append(a[0])
-
+hand_farg = ["hjarter", "hjarter", "hjarter", "hjarter", "hjarter"]
 print hand_farg
+
 
 hand_siffror = []
 for a in hand:
     hand_siffror.append(a[1])
-#hand_siffror = [6, 3, 6, 6, 6]
+hand_siffror = [1, 2, 3, 4, 5]
 #[1, 2, 3, 4]
 
 print hand_siffror
@@ -57,25 +58,58 @@ print "par", par()
 '''
 
 #par i hand
-n = 0
+'''n = 0
 for x in hand_siffror[:-1]:
     if x==hand_siffror[(n+1)]:
         print "pair in", x
-    n=n+1
+    n=n+1'''
+
+#par pa annat satt
+par_i_hand=[]
+def samlingar():
+    for x in range(12):
+        if hand_siffror.count(x+1) == 2:
+            par_i_hand.append(x+1)
+
+            print "Par i", (x+1)
+    print par_i_hand
+print samlingar()
+
+def par():
+    if len(par_i_hand) == 1:
+        return True
+    else:
+        return False
+
+def tvapar():
+    if len(par_i_hand) == 2:
+        return True
+    else:
+        return False
+
+
+
+triss_i_hand=[]
+def triss():
+    for x in range(12):
+        if hand_siffror.count(x+1) == 3:
+            triss_i_hand.append(x+1)
+            print "Triss i", x+1
+    print triss_i_hand
+
+print triss()
+
+
+#full-house
+def full_house():
+    if par() == True and triss() == True:
+        return True
+print "du har full-house i", triss_i_hand, "och", par_i_hand
 
 
 
 
-#triss i hand
-#vi har problemet att en triss genererar ocksa 2 par då den parar bår position 1,2 och 2,3... vi måste ändra denna kod
-n = 0
-for x in hand_siffror[:-2]:
-    if x==hand_siffror[(n+1)]==hand_siffror[n+2]:
-        print "triss in", x
-    n=n+1
-
-
-
+#farg i hand
 def farg():
     if hand_farg[0] == hand_farg[1] and hand_farg[1] == hand_farg[2] and hand_farg[2] == hand_farg[3] and hand_farg[3] == hand_farg[4]:
         return True
@@ -83,39 +117,32 @@ def farg():
         return False
 
 
+
+
+#stege i hand
 def stege():
     hand_siffror.sort()
-    if hand_siffror[n] == hand_siffror[n+1] +1 and hand_siffror[n] == hand_siffror[n+2] +2 and hand_siffror[n] == hand_siffror[n+3] +3 and hand_siffror[n] == hand_siffror[n+4] +4:
+    n = 0
+    if hand_siffror[n] +1 == hand_siffror[n+1] and hand_siffror[n]+2 == hand_siffror[n+2] and hand_siffror[n]+3 == hand_siffror[n+3] and hand_siffror[n]+4 == hand_siffror[n+4]:
         return True
     else:
         return False
 
-#farg ochs stege är inte så svårt att få till, men frågan är om man ska göra det mer generellt? Men att hitta par i en hand med 10 kort kanske kan vara relevant, samma sak du letar efter.
-# men om vi letar färg i en hand med 10 kort, letar vi då efter 5 av samma färg eller hela handen(10 kort) i samma färg. Generellt i all ära, men om vi inte ens har definerat vad vi vill
-# ha blir det ju lite märkligt att skriva en generell funktion på det. Eftersom du inte finns ett vanligt spel med 10 kort på hand där något heter färg. Min tanke!
-            
-    
-    
-    
+
+print stege()
+#farg ochs stege ar inte sa svart att fa till, men fragan ar om man ska gora det mer generellt? Men att hitta par i en hand med 10 kort kanske kan vara relevant, samma sak du letar efter.
+# men om vi letar farg i en hand med 10 kort, letar vi da efter 5 av samma farg eller hela handen(10 kort) i samma farg. Generellt i all ara, men om vi inte ens har definerat vad vi vill
+# ha blir det ju lite markligt att skriva en generell funktion pa det. Eftersom du inte finns ett vanligt spel med 10 kort pa hand dar nagot heter farg. Min tanke!
+
+
+
+
 
 
 
 
 
 '''
-
-
-def triss():
-    hand_siffror.sort()
-    for n in range(4):
-        if hand_siffror[(n-1)] == hand_siffror[n] and hand_siffror[n] == hand_siffror[(n+1)] :
-            return True
-
-print triss()
-
-
-
-
 def fyrtal():
     hand_siffror.sort()
     for n in range(4):
@@ -129,18 +156,4 @@ for i in hand_siffror:
         print "you have pair"
 
 
-#andring hejhopp
-
-
-"for par in hand"
- xs=[1,3,2,3,4,6,6,3]
-xs.sort()
-n = 0
-for x in xs[:-2]:
-    if x==xs[(n+1)] and x==xs[n+2]:
-        print "triple in ", x
-    n=n+1
-
-
-SYNS DET HAR?!?!?
 '''
