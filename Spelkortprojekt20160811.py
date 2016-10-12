@@ -85,7 +85,7 @@ def farg():
 
 def stege():
     hand_siffror.sort()
-    if hand_siffror[n] == hand_siffror[n+1] +1 and hand_siffror[n+1] == hand_siffror[n+2] +1 and hand_siffror[n+2] == hand_siffror[n+3] +1 and hand_siffror[n+3] == hand_siffror[n+4] +1:
+    if hand_siffror[n] == hand_siffror[n+1] +1 and hand_siffror[n] == hand_siffror[n+2] +2 and hand_siffror[n] == hand_siffror[n+3] +3 and hand_siffror[n] == hand_siffror[n+4] +4:
         return True
     else:
         return False
